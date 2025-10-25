@@ -1,0 +1,61 @@
+     <div class="details">
+        <h3 class="name">modern flats and apartments</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i><span>Kileleshwa nairobi kenya</span></p>
+        <div class="info">
+          <p class="property-price"><i class="fas fa-tag"></i><span>price</span></p>
+          <p><i class="fas fa-user"></i><span>john doe (owner)</span></p>
+          <p><i class="fas fa-phone"><a href="tel:0726858282">0726858282</a></i></p>
+
+          <p><i class="fas fa-building"></i><span>flat</span></p>
+          <p><i class="fas fa-house"></i><span>sale</span></p>
+          <p><i class="fas fa-calendar"><span>10-11-2025</span></i></p>
+        </div>
+        <h3 class="title">details</h3>
+        <div class="flex">
+          <div class="box">
+            <p><i>rooms :</i><span>2 BHK</span></p>
+            <p><i>deposit amount :</i><span>0</span></p>
+            <p><i>status :</i><span>ready to move</span></p>
+            <p><i>bedroom :</i><span>3</span></p>
+            <p><i>bathroom :</i><span>2</span></p>
+            <p><i>balcony :</i><span>1</span></p>
+          </div>
+          <div class="box">
+            <p><i>square feet :</i><span>750sqft</span></p>
+            <p><i>age :</i><span>3 years</span></p>
+            <p><i>room floor :</i><span>3</span></p>
+            <p><i>total floor :</i><span>22</span></p>
+            <p><i>furnished :</i><span>semi-furnished</span></p>
+            <p><i>loan :</i><span>available</span></p>
+          </div>
+
+        </div>
+        <h3 class="title">amenities</h3>
+        <div class="flex">
+          <div class="box">
+            <p><i class="fas fa-check"></i><span>lifts</span></p>
+            <p><i class="fas fa-check"></i><span>security guards</span></p>
+            <p><i class="fas fa-times"></i><span>play area</span></p>
+            <p><i class="fas fa-check"></i><span>garden</span></p>
+            <p><i class="fas fa-check"></i><span>water supply</span></p>
+            <p><i class="fas fa-check"></i><span>power backup</span></p>
+          </div>
+          <div class="box">
+            <p><i class="fas fa-check"></i><span>parking area</span></p>
+            <p><i class="fas fa-times"></i><span>gym</span></p>
+            <p><i class="fas fa-check"></i><span>shopping mall</span></p>
+            <p><i class="fas fa-check"></i><span>hospital</span></p>
+            <p><i class="fas fa-check"></i><span>schools</span></p>
+            <p><i class="fas fa-check"></i><span>market area</span></p>
+          </div>
+
+        </div>
+        <h3 class="title">description</h3>
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus laborum, blanditiis
+          non quia quod dolores enim est vel veritatis nulla?.</p>
+        <form action="" method="post">
+          <input type="submit" value="save property" name="savee" class="inline-btn">
+        </form>
+        <a href=""></a>
+      </div>
+    </div>

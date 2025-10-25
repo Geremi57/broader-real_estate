@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- 
+     <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css"
+    integrity="sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+
+  <link rel="stylesheet" href="style.css" />
+
+
+
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="logo"><img src="../image/Broader (3) (2).png" alt="" /></a>
+    <ul class="navbar">
+      <li><a href="#">Home</a></li>
+      <li><a href="./about.html">About Us</a></li>
+      <!-- <li><a href="../index.html#feature">Features</a></li> -->
+
+      <li class="dropdown">
+        <span><a href="#properties">Properties</a></span>
+
+        <div class="dropdown-content">
+          <a href="#" data-type="apartment">Apartment</a>
+          <a href="#" data-type="land">Land</a>
+          <a href="#" data-type="mortgage">Mortgage Home</a>
+        </div>
+      </li>
+      <li><a href="./contact.html">Contact us</a></li>
+    </ul>
+    <div class="h-btn">
+      <!-- <a href="./login_page/login.html" class="h-btn1">Login</a>
+        <a href="./register-page/register.html" class="h-btn3">Sign up</a> -->
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </div>
+  </header>
+  <section class="hero_section">
+    <div class="hero_container">
+      <div class="hero_text_container">
+        <h3 class="hero_text">Find Your Dream Home With Ease!</h3>
+        <p class="hero_desc">
+          Discover properties that suit your lifestyle and budget. whether
+          you're buying, selling or renting, we've got the perfect solution
+          for you. Your next home is just a search away!
+        </p>
+      </div>
+      <div class="search_form_container">
+        <div class="search_type_container">
+          <div class="search_type_inner">
+            <button class="search_type_btn active">For Rent</button>
+            <button class="search_type_btn">For Sales</button>
+          </div>
+          <form action="#" class="search_form">
+
+            <fieldset class="search_input_container">
+              <label for="propertytype">Property Type</label>
+              <select name="propertytype" class="search_input" id="propertytype">
+                <option value="#">Property Type</option>
+                <option value="apartments">Apartment</option>
+                <option value="Land">Land</option>
+                <option value="cottage">Cottages</option>
+                <option value="villas">Villas</option>
+              </select>
+            </fieldset>
+            <fieldset class="search_input_container">
+              <label for="keywords">Location</label>
+              <fieldset class="search_input_container">
+
+                <select name="propertylocation" class="search_input" id="propertylocation">
+
+                  <option value="#">select</option>
+                  <option class="apartments" value="muthangari">muthangari</option>
+                  <option class="apartments" value="Kileleshwa">kileleshwa</option>
+                  <option class="apartments" value="killimani">killimani</option>
+                  <option class="cottage" value="killimani">killimani</option>
+                  <option class="Land" value="killimani">Machakos</option>
+                  <option class="Land" value="killimani">Ruai</option>
+                  <option class="Land" value="killimani">Thigiri</option>
+                  <option class="Land" value="killimani">Kerarapon</option>
+                  <option class="villas" value="killimani">westlands</option>
+
+
+                </select>
+              </fieldset>
+            </fieldset>
+            <div class="search_input_container">
+              <a href="#properties">
+                <button class="search_form_btn">
+                  Find A Home
+                </button>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+  </section>
+
+  <!-- Featured Properties -->
+
+  <section id="properties" class="featured_properties_section">
+    <div class="featured_properties_container">
+      <div class="title_container">
+        <h1 class="subtitle">Featured Properties</h1>
+
+        <h2 class="title">Featured Properties Just For You</h2>
+      </div>
+      <div class="content_container">
+        <div class="featured_properties_menu_container">
+          <ul class="featured_properties_menu_list">
+            <li><button class="active" data-tab="tab-1">View All</button></li>
+            <li><button data-tab="tab-2">Apartments</button></li>
+            <li><button data-tab="tab-3">Land</button></li>
+            
+          </ul>
+        </div>
+        <div class="featured_tab active" id="tab-1">
+          <div class="featured_properties_content_container">
+
+
+          </div>
+        </div>
+
+      </div>
+  </section>
+
+
+  <!-- ======= -->
+  <!-- services -->
+  <section class="services">
+    <h1 class="heading">our services</h1>
+    <div class="box-container">
+      <div class="box box1">
+        <!-- <img src="./image/buy_prop.png" alt=""> -->
+        <h3>Property Sales</h3>
+        <p>Helping clients buy and sell residential or commercial properties seamlessly.</p>
+      </div>
+
+      <div class="box box2">
+        <!-- <img src="./image/buy_prop.png" alt=""> -->
+        <h3>Land Acquisition</h3>
+        <p>Secure prime plots legally and efficiently in desired locations.</p>
+      </div>
+
+      <div class="box box3">
+        <!-- <img src="./image/buy_prop.png" alt=""> -->
+        <h3>Property Management</h3>
+        <p>We maintain, market, and manage properties for maximum owner returns.</p>
+      </div>
+
+      <div class="box box4">
+        <!-- <img src="./image/buy_prop.png" alt=""> -->
+        <h3>Real Estate Marketing</h3>
+        <p>Promote your listings online with photos, videos, and digital exposure.</p>
+      </div>
+
+      <div class="box box5">
+        <!-- <img src="./image/buy_prop.png" alt=""> -->
+        <h3>Property Valuation</h3>
+        <p>Get accurate, up-to-date estimates of your property's true market worth.</p>
+      </div>
+
+      <div class="box box6">
+        <!-- <img src="./image/buy_prop.png" alt=""> -->
+        <h3>24/7 Customer Support</h3>
+        <p>Our agents are always available for inquiries and assistance anytime.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ======== -->
+  <section class="cities_section">
+    <div class="cities_container">
+      <div class="title_container">
+        <h1 class="subtitle">Explore Cities</h1>
+        <h2 class="title">Discover the best locations to call home</h2>
+      </div>
+
+      <div class="cities_content_container">
+        <div class="swiper citiesSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="cities_card">
+                <div class="img_container">
+                  <img src="../image/neutral/one-africa-place-in-nairobi-kenya-v0-51vthm2oogua1.jpg" alt="city">
+
+                </div>
+                <div class="text_container">
+                  <h4>Westlands</h4>
+                  <p>2 properties</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="cities_card">
+                <div class="img_container">
+                  <img src="../image/neutral/buildings-landscape.jpg" alt="city">
+
+                </div>
+                <div class="text_container">
+                  <h4>Kileleshwa</h4>
+                  <p>16 properties</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="cities_card">
+                <div class="img_container">
+                  <img src="../image/neutral/vertical-shot-beautiful-hilly-terrain-covered-with-green-vegetation.jpg"
+                    alt="city">
+
+                </div>
+                <div class="text_container">
+                  <h4>Kakamega</h4>
+                  <p>6 properties</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="cities_card">
+                <div class="img_container">
+                  <img src="../image/neutral/extra-long-shot-peaceful-landscape-with-trees.jpg" alt="city">
+
+                </div>
+                <div class="text_container">
+                  <h4>Webuye</h4>
+                  <p>2 properties</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="cities_card">
+                <div class="img_container">
+                  <img src="../image/neutral/riches-to-rags-kilimani-and-kileleshwa-v0-r1xzpfn2flec1.webp" alt="city">
+
+                </div>
+                <div class="text_container">
+                  <h4>Killimani</h4>
+                  <p>4 properties</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Featured Properties -->
+
+  
+
+  <section class="top_properties_section">
+  <h1 class="heading">In Development</h1>
+
+  <div class="box-container">
+    <div class="box featured">
+      <div class="thumb">
+        <p class="total-images">
+          <i class="fa fa-image"></i>
+          <span class="numphotos">4</span>
+        </p>
+        <img class="featImg"  src="image/the-beacon/04-Aerial.jpg" alt="Featured Property">
+      </div>
+
+      <div class="content">
+        <h3 class="name featuredName">Modern Flats and Apartments</h3>
+        <p class="location featuredLocation">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Kisumu, Kenya</span>
+        </p>
+
+        <div class="flex">
+          <p class="bdrms"><i class="fas fa-bed"></i><span>3</span></p>
+          <p class="bathes"><i class="fas fa-bath"></i><span>2</span></p>
+          <p class="sqrft"><i class="fas fa-maximize"></i><span>750 sqft</span></p>
+        </div>
+
+        <button class="btn viewProp">View Property</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- <div class="top_properties_container">
+      <div class="title_container">
+        <h1 class="subtitle">Featured Property</h1>
+
+        <h2 class="title">Todays featured property</h2>
+      </div>
+      <div class="content_container">
+
+
+        top properties
+
+        <div class="top_properties_content_container">
+        </div>
+      </div>
+
+
+    </div> -->
+
+
+
+  <footer class="footer">
+
+    <section class="flex">
+
+      <div class="box">
+        <a href="tel:0726858282"><i class="fas fa-phone"></i><span>0726858282</span></a>
+        <a href="tel:0742545572"><i class="fas fa-phone"></i><span>0742545572</span></a>
+        <a href="mailto:wangageremi725@gmail.com"><i
+            class="fas fa-envelope"></i><span>wangageremi725@gmail.com</span></a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i><span>Nairobi, Kenya</span></a>
+      </div>
+
+      <div class="box">
+        <a href="home.html"><span>home</span></a>
+        <a href="about.html"><span>about</span></a>
+        <a href="contact.html"><span>contact</span></a>
+        <a href="listings.html"><span>all listings</span></a>
+        <a href="#"><span>saved properties</span></a>
+      </div>
+
+      <div class="box">
+        <a href="#"><span>facebook</span><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><span>twitter</span><i class="fab fa-twitter"></i></a>
+        <a href="#"><span>linkedin</span><i class="fab fa-linkedin"></i></a>
+        <a href="#"><span>instagram</span><i class="fab fa-instagram"></i></a>
+
+      </div>
+
+    </section>
+
+    <div class="credit">&copy; Broader Realtors <span class="year"></span> Developed by <a
+        href="https://geremi57.github.io/Personal-Website/"><span>Geremi
+          Wanga</span></a> |
+      all rights
+      reserved!</div>
+
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" ~
+    integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/fontawesome.min.js"
+    integrity="sha512-j12pXc2gXZL/JZw5Mhi6LC7lkiXL0e2h+9ZWpqhniz0DkDrO01VNlBrG3LkPBn6DgG2b8CDjzJT+lxfocsS1Vw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
