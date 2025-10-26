@@ -9,7 +9,7 @@ async function loadProperty() {
     return;
   }
 
-  const response = await fetch(`http://localhost:8080/api/properties/${link}`);
+  const response = await fetch(`https://broader-real-estate-1.onrender.com/api/properties/${link}`);
   const property = await response.json();
 console.log(response)
   console.log(property.status, property.deposit)
