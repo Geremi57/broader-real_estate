@@ -507,16 +507,21 @@ searchBtn.addEventListener("click", function(e){
 })
 
 console.log(`these are  the  asetts ${assets}`)
-let count = 0
-
+let killCount = 0
+let westCount = 0
 assets.forEach((asset) =>  {
+  // count+=1
   if (asset.location == "Killeleshwa"){
-    count+=1
+    killCount+=1
     console.log(asset)
+  }else if (asset.location == "Westlands"){
+    westCount += 1
   }
 })
 
-console.log(count)
+document.querySelector(".numKillProperty").textContent = `${killCount} properties`
+document.querySelector(".numWestProperty").textContent = `${westCount} properties`
+console.log(killCount)
 
 
 // console.log(`you want a ${typeValue} in ${localValue}`);
