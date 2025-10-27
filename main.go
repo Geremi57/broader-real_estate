@@ -57,7 +57,7 @@ func main() {
 		{
 			ID:       1,
 			Category: "featured",
-			Image:    "../image/the-beacon/04-Aerial.jpg",
+			Image:    "image/the-beacon/04-Aerial.jpg",
 			Slides: []string{
 				"image/the-beacon/01-Lounge.jpg",
 				"image/the-beacon/04-Kitchen.jpg",
@@ -88,7 +88,7 @@ func main() {
 		{
 			ID:       2,
 			Category: "apartments",
-			Image:    "../image/golden-mansion/IMG-20251008-WA0017.jpg",
+			Image:    "image/golden-mansion/IMG-20251008-WA0017.jpg",
 			Slides: []string{
 				"image/golden-mansion/IMG-20251008-WA0002.jpg",
 				"image/golden-mansion/IMG-20251008-WA0004.jpg",
@@ -120,7 +120,7 @@ func main() {
 		{
 			ID:       3,
 			Category: "apartments",
-			Image:    "../image/diamond-ivy/Diamod_ivy.jpg",
+			Image:    "image/diamond-ivy/Diamod_ivy.jpg",
 			Slides: []string{
 				"image/diamond-ivy/Annotation 2025-10-06 203843.png",
 				"image/diamond-ivy/Annotation 2025-10-06 204039.png",
@@ -153,7 +153,7 @@ func main() {
 		{
 			ID:       4,
 			Category: "apartments",
-			Image:    "../image/the-beacon/04-Aerial.jpg",
+			Image:    "image/the-beacon/04-Aerial.jpg",
 			Slides: []string{
 				"image/the-beacon/01-Lounge.jpg",
 				"image/the-beacon/04-Kitchen.jpg",
@@ -184,7 +184,7 @@ Offering spacious 3 & 4-bedroom ultra-modern residences with DSQ, along with lav
 		{
 			ID:       5,
 			Category: "apartments",
-			Image:    "../image/verona/IMG-20251013-WA0039.jpg",
+			Image:    "image/verona/IMG-20251013-WA0039.jpg",
 			Slides: []string{
 				"image/verona/IMG-20251013-WA0030.jpg",
 				"image/verona/IMG-20251013-WA0028.jpg",
@@ -215,7 +215,7 @@ Offering spacious 3 & 4-bedroom ultra-modern residences with DSQ, along with lav
 		{
 			ID:       6,
 			Category: "apartments",
-			Image:    "../image/blossoms/Screenshot from 2025-10-23 17-42-22.png",
+			Image:    "image/blossoms/Screenshot from 2025-10-23 17-42-22.png",
 			Slides: []string{
 				"image/blossoms/IMG-20251020-WA0005.jpg",
 				"image/blossoms/IMG-20251021-WA0003.jpg",
@@ -247,7 +247,7 @@ Offering spacious 3 & 4-bedroom ultra-modern residences with DSQ, along with lav
 		{
 			ID:       7,
 			Category: "apartments",
-			Image:    "../image/pandora/IMG-20251013-WA0002.jpg",
+			Image:    "image/pandora/IMG-20251013-WA0002.jpg",
 			Slides: []string{
 				"image/pandora/IMG-20251013-WA0016.jpg",
 				"image/pandora/IMG-20251013-WA0013.jpg",
@@ -278,7 +278,7 @@ Offering spacious 3 & 4-bedroom ultra-modern residences with DSQ, along with lav
 		{
 			ID:         8,
 			Category:   "Land",
-			Image:      "../image/high-angle-shot-farms-with-mountains-background-captured-samburu-kenya.jpg",
+			Image:      "image/high-angle-shot-farms-with-mountains-background-captured-samburu-kenya.jpg",
 			Title:      "",
 			Location:   "Machakos",
 			Type:       "land",
@@ -293,7 +293,7 @@ Offering spacious 3 & 4-bedroom ultra-modern residences with DSQ, along with lav
 		{
 			ID:         9,
 			Category:   "Land",
-			Image:      "../image/african-nature-scenery-with-road-trees.jpg",
+			Image:      "image/african-nature-scenery-with-road-trees.jpg",
 			Title:      "",
 			Location:   "Ruai",
 			Type:       "land",
@@ -308,7 +308,7 @@ Offering spacious 3 & 4-bedroom ultra-modern residences with DSQ, along with lav
 		{
 			ID:         10,
 			Category:   "Land",
-			Image:      "../image/view-african-nature-scenery-with-vegetation.jpg",
+			Image:      "image/view-african-nature-scenery-with-vegetation.jpg",
 			Title:      "",
 			Location:   "Thigiri",
 			Type:       "land",
@@ -323,7 +323,7 @@ Offering spacious 3 & 4-bedroom ultra-modern residences with DSQ, along with lav
 		{
 			ID:         11,
 			Category:   "Land",
-			Image:      "../image/beautiful-green-landscape-with-marsh-cloudy-sky.jpg",
+			Image:      "image/beautiful-green-landscape-with-marsh-cloudy-sky.jpg",
 			Title:      "",
 			Location:   "Kerarapon Nairobi",
 			Type:       "land",
