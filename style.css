@@ -221,7 +221,7 @@ a.currentPage {
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  background: url("../image/neutral/analog-landscape-city-with-buildings.jpg");
+  background: url("image/neutral/analog-landscape-city-with-buildings.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1142,7 +1142,7 @@ height: 4rem;
 
 .box1, .box2, .box3, .box4, .box5, .box6{
   position: relative;
-  background: url("./image/young-couple-buying-new-house-asian-woman-african-man-signing-documents-new-home.jpg");
+  background: url("image/neutral/mortgage-house-loan-website-login-graphic-concept.jpg");
   /* overlay: 0.1; */
   padding: 7rem;
   color: #fff;
@@ -1182,34 +1182,34 @@ height: 4rem;
 }
 
 .box2{
-  background: url("./image/aerial-view-small-village-country-roadside.jpg");
+  background: url("image/neutral/aerial-view-small-village-country-roadside.jpg");
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .box3{
-  background: url("./image/modern-residential-building.jpg");
+  background: url("image/neutral/modern-residential-building.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .box4{
-  background: url("./image/mortgage-house-loan-website-login-graphic-concept.jpg");
+  background: url("image/neutral/mortgage-house-loan-website-login-graphic-concept.jpg");
   
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .box5{
-  background: url("./image/aerial-view-small-village-country-roadside.jpg");
+  background: url("image/neutral/aerial-view-small-village-country-roadside.jpg");
   
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .box6{
-  background: url("./image/smiling-african-american-woman-showing-model-building.jpg");
+  background: url("image/neutral/smiling-african-american-woman-showing-model-building.jpg");
   
   background-position: center;
   background-repeat: no-repeat;
