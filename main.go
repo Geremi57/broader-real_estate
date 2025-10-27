@@ -56,7 +56,7 @@ func main() {
 
 		{
 			ID:       1,
-			Category: "apartments",
+			Category: "featured",
 			Image:    "../image/the-beacon/04-Aerial.jpg",
 			Slides: []string{
 				"image/the-beacon/01-Lounge.jpg",
@@ -87,7 +87,7 @@ func main() {
 		},
 		{
 			ID:       2,
-			Category: "featured",
+			Category: "apartments",
 			Image:    "../image/golden-mansion/IMG-20251008-WA0017.jpg",
 			Slides: []string{
 				"image/golden-mansion/IMG-20251008-WA0002.jpg",
