@@ -1,3 +1,26 @@
+
+const allSections = document.querySelectorAll("section");
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  console.log(allSections)
+
+
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.remove("section--hidden");
+    observer.unobserve(entry.target);
+  });
+};
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add("section--hidden");
+});
+
 const searchTypeBtn = document.querySelectorAll(".search_type_btn");
 console.log(document.querySelectorAll(".product_card"));
 // console.log(searchTypeBtn);
@@ -8,8 +31,6 @@ searchTypeBtn.forEach((search_btn) => {
     search_btn.classList.add("active");
   });
 });
-
-
 
  var swiper = new Swiper(".citiesSwiper", {
       spaceBetween: 30,
@@ -485,6 +506,18 @@ searchBtn.addEventListener("click", function(e){
   }
 })
 
+console.log(`these are  the  asetts ${assets}`)
+let count = 0
+
+assets.forEach((asset) =>  {
+  if (asset.location == "Killeleshwa"){
+    count+=1
+    console.log(asset)
+  }
+})
+
+console.log(count)
+
 
 // console.log(`you want a ${typeValue} in ${localValue}`);
 
@@ -520,6 +553,8 @@ window.addEventListener("scroll", function () {
 });
 
 
+
+
 let menu = document.querySelector("#menu-icon");
 
 let navbar = document.querySelector(".navbar");
@@ -529,8 +564,6 @@ menu.onclick = () => {
   console.log(menu.classList);
   navbar.classList.toggle("open");
 };
-
-
 
 let year = new Date().getFullYear()
 document.querySelector(".year").textContent = year
