@@ -36,6 +36,12 @@
 </head>
 
 <body>
+  <div id="loader">
+    <img src="image/neutral/Broader (3) (2).png" alt="loading..." id="loader-logo">
+  </div>
+
+<div id="content" class="hidden">
+
   <header>
     <a href="index.html" class="logo"><img src="image/neutral/Broader (3) (2).png" alt="" /></a>
     <ul class="navbar">
@@ -91,7 +97,7 @@
             <fieldset class="search_input_container">
               <label for="keywords">Location</label>
               <fieldset class="search_input_container">
-
+                
                 <select name="propertylocation" class="search_input" id="propertylocation">
 
                   <option value="#">select</option>
@@ -105,7 +111,7 @@
                   <option class="Land" value="killimani">Kerarapon</option>
                   <option class="villas" value="killimani">westlands</option>
 
-
+                  
                 </select>
               </fieldset>
             </fieldset>
@@ -167,7 +173,7 @@
         <h3>Land Acquisition</h3>
         <p>Secure prime plots legally and efficiently in desired locations.</p>
       </div> -->
-
+      
       <div class="box box3">
         <!-- <img src="./image/buy_prop.png" alt=""> -->
         <h3>Property Management & Support</h3>
@@ -209,7 +215,7 @@
               <div class="cities_card">
                 <div class="img_container">
                   <img src="image/neutral/beautiful-aerial-shot-city.jpg" alt="city">
-
+                  
                 </div>
                 <div class="text_container">
                   <h4>Westlands</h4>
@@ -233,7 +239,7 @@
               <div class="cities_card">
                 <div class="img_container">
                   <img src="image/neutral/vertical-shot-beautiful-hilly-terrain-covered-with-green-vegetation.jpg"
-                    alt="city">
+                  alt="city">
 
                 </div>
                 <div class="text_container">
@@ -278,9 +284,9 @@
   
 
   <section class="top_properties_section">
-  <h1 class="heading">In Development</h1>
+    <h1 class="heading">In Development</h1>
 
-  <div class="box-container">
+    <div class="box-container">
     <div class="box featured">
       <div class="thumb">
         <p class="total-images">
@@ -289,7 +295,7 @@
         </p>
         <img class="featImg" loading="lazy" src="image/the-beacon/04-Aerial.jpg" alt="Featured Property">
       </div>
-
+      
       <div class="content">
         <h3 class="name featuredName">Modern Flats and Apartments</h3>
         <p class="location featuredLocation">
@@ -302,7 +308,7 @@
           <p class="bathes"><i class="fas fa-bath"></i><span>2</span></p>
           <p class="sqrft"><i class="fas fa-maximize"></i><span>750 sqft</span></p>
         </div>
-
+        
         <button class="btn viewProp">View Property</button>
       </div>
     </div>
@@ -311,37 +317,37 @@
 
 
   <!-- <div class="top_properties_container">
-      <div class="title_container">
+    <div class="title_container">
         <h1 class="subtitle">Featured Property</h1>
-
+        
         <h2 class="title">Todays featured property</h2>
       </div>
       <div class="content_container">
 
-
+        
         top properties
-
+        
         <div class="top_properties_content_container">
         </div>
       </div>
-
-
+      
+      
     </div> -->
+    
 
+    
+    <footer class="footer">
 
-
-  <footer class="footer">
-
-    <section class="flex">
-
+      <section class="flex">
+        
       <div class="box">
         <a href="tel:0726858282"><i class="fas fa-phone"></i><span>0726858282</span></a>
         <a href="tel:0742545572"><i class="fas fa-phone"></i><span>0742545572</span></a>
         <a href="mailto:wangageremi725@gmail.com"><i
-            class="fas fa-envelope"></i><span>wangageremi725@gmail.com</span></a>
+          class="fas fa-envelope"></i><span>wangageremi725@gmail.com</span></a>
         <a href="#"><i class="fas fa-map-marker-alt"></i><span>Nairobi, Kenya</span></a>
       </div>
-
+      
       <div class="box">
         <a href="home.html"><span>home</span></a>
         <a href="about.html"><span>about</span></a>
@@ -379,6 +385,27 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
   <script src="script.js"></script>
+</div>
+
+<script>
+  window.addEventListener('load', function () {
+    const loader = document.getElementById('loader');
+    const content = document.getElementById('content');
+
+    // Wait a tiny bit to make transition smooth
+    setTimeout(() => {
+      loader.style.opacity = '0';
+      loader.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => {
+        loader.style.display = 'none';
+        content.classList.remove('hidden');
+      }, 500);
+    }, 300); // Adjust the delay if needed
+  });
+</script>
+
+
+
 </body>
 
 </html>
