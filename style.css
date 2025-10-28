@@ -640,8 +640,11 @@ section{
 .product_card
 .product_features_list{
   display: flex;
-  /* position: relative; */
+  /* position: fixed; */
+  top: 20px;
   /* margin-left: -38px; */
+  bottom: 0;
+  
   gap: 10px;
 }
 
@@ -687,6 +690,8 @@ color: gray;
   padding: 10px 1px;
   display: flex;
   justify-content: end;
+  position: relative;
+  /* bottom: 20px; */
   font-size: 18px;
   border: 1px solid var(--other-color);
 }
@@ -955,7 +960,7 @@ option{
   align-items: center;
   justify-content: center;
   position: relative;
-  left: 20%;
+  /* left: 20%; */
   padding: 20px;
   cursor: grab;
 }
@@ -1165,7 +1170,7 @@ border-radius: 5px;
 
 .box1, .box2, .box3, .box4, .box5, .box6{
   position: relative;
-  background: url("image/neutral/mortgage-house-loan-website-login-graphic-concept.jpg");
+  background: url("image/neutral/young-couple-buying-new-house-asian-woman-african-man-signing-documents-new-home.jpg");
   /* overlay: 0.1; */
   padding: 7rem;
   color: #fff;
@@ -1654,6 +1659,11 @@ border-radius: 5px;
     left: 10%;
 
   }
+  .product_card
+.price_container{
+  bottom: 10px;
+}
+
   }
 
 @media (max-width: 1330px) {
