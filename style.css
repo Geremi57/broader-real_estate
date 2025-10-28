@@ -75,6 +75,7 @@ header {
   background-color: var(--bg-color);
   justify-content: space-between;
   padding: 7px 5% 9.5px 5%;
+   transform: translateY(0);
 /* transform: translateY(-100%);  */
 transition: transform 0.6s ease, background-color 0.6s ease;
   /* transform: translateY(1rem); */
@@ -228,7 +229,7 @@ section{
 .hero_section {
   width: 100%;
   height: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   background: url("image/neutral/analog-landscape-city-with-buildings.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -244,7 +245,7 @@ section{
   width: 100%;
   height: 100%;
   background: url("image/neutral/analog-landscape-city-with-buildings.jpg");
-  min-height: 100vh;
+  min-height: 100dvh;
   background: black;
   position: absolute;
   top: 0;
@@ -486,7 +487,7 @@ section{
 .featured_properties_section, .top_properties_section {
   /* width: 100%; */
   height: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   /* display: flex; */
   align-items: center;
   justify-content: center;
@@ -512,7 +513,7 @@ section{
 .featured_properties_section .featured_properties_container, .top_properties_container{
   width: 100%;
   height: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -924,7 +925,6 @@ option{
   gap: 20px;
 }
 
-/* back button */
 #backToList {
   margin-top: 20px;
   background: none;
@@ -935,7 +935,11 @@ option{
 }
 
 
-
+header.scrolled {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
 
 

@@ -1,10 +1,6 @@
 
 const allSections = document.querySelectorAll("section");
 const revealSection = function (entries, observer) {
-  const [entry] = entries;
-  console.log(allSections)
-
-
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
     entry.target.classList.remove("section--hidden");
@@ -20,6 +16,8 @@ allSections.forEach(function (section) {
   sectionObserver.observe(section);
   section.classList.add("section--hidden");
 });
+
+
 
 const searchTypeBtn = document.querySelectorAll(".search_type_btn");
 console.log(document.querySelectorAll(".product_card"));
@@ -104,7 +102,7 @@ async function loadProps() {
 
             property.innerHTML =  `
             <div class="img_container" data-id = ${apart.id}>
-            <img src="${apart.image}" alt="product" class="product_img">
+            <img src="${apart.image}" loading="lazy" alt="product" class="product_img">
             <div class="text_container">
             <a href="properties/property.html?link=${apart.link}">
             <h3>${apart.title}</h3>
@@ -149,7 +147,7 @@ async function loadProps() {
               
               property.innerHTML = `
               <div class="img_container" data-id = ${apart.id}>
-              <img src="${apart.image}" alt="product" class="product_img">
+              <img src="${apart.image}" loading="lazy" alt="product" class="product_img">
               <div class="text_container">
               <a href="properties/property.html?link=${apart.link}">
               <h3>${apart.title}</h3>
@@ -184,7 +182,7 @@ async function loadProps() {
             property.setAttribute('data-id', apart.id)
             property.innerHTML =  `  
             <div class="img_container" data-id = ${apart.id}>
-            <img src="${apart.image}" alt="product" class="product_img">
+            <img src="${apart.image}" loading="lazy" alt="product" class="product_img">
             <div class="text_container">
             <a href="properties/property.html?link=${apart.link}">
             <h3>${apart.title}</h3>
@@ -217,7 +215,7 @@ async function loadProps() {
             property.innerHTML =  `
             
             <div class="img_container" data-id = ${apart.id}>
-            <img src="${apart.image}"
+            <img src="${apart.image}" loading="lazy"
             alt="product" class="product_img">
             <div class="text_container">
             <a href="properties/property.html?link=${apart.link}">
@@ -248,7 +246,7 @@ async function loadProps() {
             property.setAttribute('data-id', apart.id)
             property.innerHTML =  `
             <div class="img_container" data-id = ${apart.id}>
-            <img src="${apart.image}" alt="product" class="product_img">
+            <img src="${apart.image}" loading="lazy" alt="product" class="product_img">
                 <div class="text_container">
                 <a href="properties/property.html?link=${apart.link}">
                     <h3>${apart.title}</h3>
@@ -281,7 +279,7 @@ async function loadProps() {
 
             property.innerHTML =  `
             <div class="img_container" data-id = ${apart.id}>
-            <img src="${apart.image}" alt="product" class="product_img">
+            <img src="${apart.image}" loading="lazy" alt="product" class="product_img">
                 <div class="text_container">
                 <a href="properties/property.html?link=${apart.link}">
                 <h3>${apart.title}</h3>
@@ -537,28 +535,53 @@ document.getElementById("propertytype").textContent)
 
     loadProps();
 
-const header = document.querySelector("header")
 
 // window.addEventListener("scroll", function () {
 //   (header.style.position = "fixed", this.window.scrollY > 700);
 //   menu.classList.add("hidden")
 // });
+const header = document.querySelector("header");
+const heroSection = document.querySelector(".hero_section");
 
+// Always visible at the very top
+header.style.transform = "translateY(0)";
+header.style.transition = "transform 0.8s ease";
+let lastKnownScrollY = 0;
+let isHidden = false;
 
-window.addEventListener("scroll", function () {
-  const header = document.querySelector("header");
-  // const menu = document.querySelector(".menu");
+window.addEventListener("scroll", () => {
+  const currentY = window.scrollY;
+  const heroHeight = heroSection.offsetHeight;
 
-  if (window.scrollY > 700) {
-    header.style.position = "fixed";
-    header.style.top = "0";
-    header.style.width = "100%";
-    // menu.classList.add("hidden");
-  } else {
-    header.style.position = "relative";
-    // menu.classList.remove("hidden");
+  // If we're still at the top (scrollY < 10), always show header
+  if (currentY <= 10) {
+    header.style.transform = "translateY(0)";
+    isHidden = false;
+    return;
   }
+
+  // When user scrolls past hero section → hide header
+  if (currentY > heroHeight) {
+    header.style.transform = "translateY(0)";
+    isHidden = false;
+  }
+
+  // When user scrolls back up above hero section → show header again
+  else if (currentY < heroHeight) {
+    header.style.transform = "translateY(-100%)";
+    isHidden = true;
+  }
+
+  lastKnownScrollY = currentY;
 });
+
+
+
+
+const headerEl = document.querySelector("header");
+let ticking = false;
+
+
 
 
 
