@@ -34,7 +34,7 @@ searchTypeBtn.forEach((search_btn) => {
 
  var swiper = new Swiper(".citiesSwiper", {
       spaceBetween: 30,
-      // centeredSlides: true,
+      centeredSlides: true,
       slidesPerView: 1,
       loop: true,
       autoplay: {
@@ -514,14 +514,17 @@ assets.forEach((asset) =>  {
   if (asset.location == "Killeleshwa"){
     killCount+=1
     console.log(asset)
-  }else if (asset.location == "Westlands"){
-    westCount += 1
+  }
+  else if (asset.location == "Westlands"){
+    console.log(asset)
+    westCount+=1
   }
 })
 
 document.querySelector(".numKillProperty").textContent = `${killCount} properties`
 document.querySelector(".numWestProperty").textContent = `${westCount} properties`
 console.log(killCount)
+console.log(westCount)
 
 
 // console.log(`you want a ${typeValue} in ${localValue}`);

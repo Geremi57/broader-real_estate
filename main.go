@@ -278,7 +278,7 @@ Offering spacious 3 & 4-bedroom ultra-modern residences with DSQ, along with lav
 		{
 			ID:         8,
 			Category:   "Land",
-			Image:      "image/high-angle-shot-farms-with-mountains-background-captured-samburu-kenya.jpg",
+			Image:      "image/neutral/high-angle-shot-farms-with-mountains-background-captured-samburu-kenya.jpg",
 			Title:      "",
 			Location:   "Machakos",
 			Type:       "land",
@@ -293,7 +293,7 @@ Offering spacious 3 & 4-bedroom ultra-modern residences with DSQ, along with lav
 		{
 			ID:         9,
 			Category:   "Land",
-			Image:      "image/african-nature-scenery-with-road-trees.jpg",
+			Image:      "image/neutral/african-nature-scenery-with-road-trees.jpg",
 			Title:      "",
 			Location:   "Ruai",
 			Type:       "land",
@@ -308,7 +308,7 @@ Offering spacious 3 & 4-bedroom ultra-modern residences with DSQ, along with lav
 		{
 			ID:         10,
 			Category:   "Land",
-			Image:      "image/view-african-nature-scenery-with-vegetation.jpg",
+			Image:      "image/neutral/view-african-nature-scenery-with-vegetation.jpg",
 			Title:      "",
 			Location:   "Thigiri",
 			Type:       "land",
@@ -323,7 +323,7 @@ Offering spacious 3 & 4-bedroom ultra-modern residences with DSQ, along with lav
 		{
 			ID:         11,
 			Category:   "Land",
-			Image:      "image/beautiful-green-landscape-with-marsh-cloudy-sky.jpg",
+			Image:      "image/neutral/beautiful-green-landscape-with-marsh-cloudy-sky.jpg",
 			Title:      "",
 			Location:   "Kerarapon Nairobi",
 			Type:       "land",
