@@ -62,19 +62,18 @@
          <div class="image">
             <img src="image/neutral/modern-african-american-man-coffee-shop.jpg" alt="">
          </div>
-         <form action="" method="post">
+         <form action="" id="contactForm" method="post">
             <h3>get in touch</h3>
-            <input type="text" name="name" required maxlength="50" placeholder="enter your name" class="box">
-            <input type="email" name="email" required maxlength="50" placeholder="enter your email" class="box">
-            <input type="number" name="number" required maxlength="10" max="9999999999" min="0"
-               placeholder="enter your number" class="box">
-            <textarea name="message" placeholder="enter your message" required maxlength="1000" cols="30" rows="10"
+            <input type="text" id="name" required maxlength="50" placeholder="enter your name" class="box">
+            <input type="email" id="email" required maxlength="50" placeholder="enter your email" class="box">
+            <textarea id="message" placeholder="enter your message" required maxlength="1000" cols="30" rows="10"
                class="box"></textarea>
+               <div id="status" class="status-message"></div>
             <input type="submit" value="send message" name="send" class="btn">
          </form>
       </div>
-      <!-- From Uiverse.io by roajuan93 --> 
-<div class="card">
+
+      <div class="card">
   <a href="#" class="socialContainer containerOne">
     <svg class="socialSvg instagramSvg" viewBox="0 0 16 16">
       <path
@@ -200,10 +199,10 @@
          </div>
 
          <div class="box">
-            <a href="home.html"><span>home</span></a>
+            <a href="index.html"><span>home</span></a>
             <a href="about.html"><span>about</span></a>
             <a href="contact.html"><span>contact</span></a>
-            <a href="listings.html"><span>all listings</span></a>
+            <a href="index.html#properties"><span>all listings</span></a>
             <a href="#"><span>saved properties</span></a>
          </div>
 
@@ -224,34 +223,7 @@
          reserved!</div>
 
    </footer>
-   <script>
-
-      document.querySelectorAll('.faq .box-container .box h3').forEach(headings => {
-         headings.onclick = () => {
-            headings.parentElement.classList.toggle('active');
-         }
-      });
-
-      let year = new Date().getFullYear()
-      document.querySelector(".year").textContent = year
-
-      const header = document.querySelector("header");
-
-      window.addEventListener("scroll", function () {
-         header.classList.toggle("sticky", this.window.scrollY > 10);
-      });
-
-      let menu = document.querySelector("#menu-icon");
-
-      let navbar = document.querySelector(".navbar");
-
-      menu.onclick = () => {
-         menu.classList.toggle("bx-x");
-         console.log(menu.classList);
-         navbar.classList.toggle("open");
-      };
-
-   </script>
+   <script src="contact.js"></script>
 
 
 </body>

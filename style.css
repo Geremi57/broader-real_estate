@@ -1526,7 +1526,15 @@ border-radius: 5px;
 }
 
 .footer .box a:hover i {
-  color: var(--white);
+  color: var(--main-color);
+}
+
+.footer .flex .box a i {
+  color: var(--main-color);
+}
+
+i{
+  color: var(--main-color);
 }
 
 .footer .box:nth-child(3) a {
@@ -1822,7 +1830,4 @@ border-radius: 5px;
     bottom: 0;
     /* top: 100px; */
   }
-
-  
-
 }

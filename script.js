@@ -65,7 +65,7 @@ searchTypeBtn.forEach((search_btn) => {
 
 
 async function loadProps() {
-  const response = await fetch("https://broader-real-estate-1.onrender.com/api/properties");
+  const response = await fetch("http://broader-real-estate.onrender.com/api/properties");
       const assets = await response.json();
       const apartments = []
       const lands = []
@@ -511,9 +511,11 @@ assets.forEach((asset) =>  {
   // count+=1
   if (asset.location == "Killeleshwa"){
     killCount+=1
+    document.querySelector(".kille").textContent = asset.location
     console.log(asset)
   }
   else if (asset.location == "Westlands"){
+    document.querySelector(".west").textContent = asset.location
     console.log(asset)
     westCount+=1
   }
@@ -525,14 +527,60 @@ console.log(killCount)
 console.log(westCount)
 
 
+//the part im talking about for every city click should filter according to the cities
+  
+const cities = document.querySelectorAll(".cities_card")
+console.log(cities)
+let loggedIds = []
+cities.forEach((city) => {
+  city.addEventListener("click", () => {
+    loggedIds = []
+    // console.log(city.children[1])
+    let txtCont = city.children[1]
+    let locTxt = txtCont.children[0].textContent.trim()
+    // console.log(locTxt)
+    assets.forEach((asset) => {
+    if (asset.location === locTxt){
+        loggedIds.push(asset.id.toString())
+        // console.log(loggedAssets)
+      }
+    })
+const loggedAssets = document.querySelectorAll(".featured_properties_content_container .product_card")
+
+
+    // loggedIds.forEach((ids) => {
+      loggedAssets.forEach((prop) => {
+        prop.classList.add("hidden")
+        console.log(prop.dataset.id)
+        if (loggedIds.includes(prop.dataset.id)) {
+          prop.classList.remove("hidden")
+          console.log(prop.classList)
+        }
+        else {
+          prop.classList.add("hidden")
+        // }
+      }
+    })
+    document.querySelector("#properties").scrollIntoView({ behavior: "smooth" });
+
+    // loggedIds.forEach
+  })
+  // console.log(loggedIds)
+})
+
+
+
+  
+  
+
+
 // console.log(`you want a ${typeValue} in ${localValue}`);
 
 
 console.log(
 document.getElementById("propertytype").textContent)
 
-    }
-
+}
     loadProps();
 
 
@@ -553,20 +601,17 @@ window.addEventListener("scroll", () => {
   const currentY = window.scrollY;
   const heroHeight = heroSection.offsetHeight;
 
-  // If we're still at the top (scrollY < 10), always show header
   if (currentY <= 10) {
     header.style.transform = "translateY(0)";
     isHidden = false;
     return;
   }
 
-  // When user scrolls past hero section → hide header
   if (currentY > heroHeight) {
     header.style.transform = "translateY(0)";
     isHidden = false;
   }
 
-  // When user scrolls back up above hero section → show header again
   else if (currentY < heroHeight) {
     header.style.transform = "translateY(-100%)";
     isHidden = true;

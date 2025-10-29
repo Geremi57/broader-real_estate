@@ -1163,6 +1163,26 @@ header {
   color: var(--white);
 }
 
+.status-message {
+  margin-top: 8px;
+  font-size: 1.95rem;
+  text-align: left;
+  min-height: 20px; /* keeps space even when empty */
+  padding: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.status-message.success {
+  color: #0f9d58; /* Google green */
+  font-weight: 600;
+}
+
+.status-message.error {
+  color: #d93025; /* red */
+  font-weight: 600;
+}
+
+
 @media (max-width: 1024px) {
   .footer {
     padding: 3rem 6%;
