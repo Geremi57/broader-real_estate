@@ -13,7 +13,7 @@ form.addEventListener("submit", async (e) => {
     status.textContent = "Sending...";
 
 try {
-    const response = await fetch("http://localhost:8080/api/contact", {
+    const response = await fetch("https://broader-real-estate-2.onrender.com/api/contact", {
         method: "Post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
