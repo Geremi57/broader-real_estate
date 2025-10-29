@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"os"
 
-	"gopkg.in/gomail.v2"
+	"github.com/resend/resend-go/v2"
 )
 
 type ContactForm struct {
@@ -21,11 +21,11 @@ func enableCORS(w http.ResponseWriter) {
 	w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 }
+
 func SendAutoReply(w http.ResponseWriter, r *http.Request) {
 	enableCORS(w)
 
 	if r.Method == http.MethodOptions {
-		// Handle preflight requests
 		w.WriteHeader(http.StatusOK)
 		return
 	}
@@ -42,16 +42,25 @@ func SendAutoReply(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	m := gomail.NewMessage()
-	m.SetHeader("From", "wangageremi725@gmail.com")
-	m.SetHeader("To", form.Email)
-	m.SetHeader("Subject", fmt.Sprintf("Thanks for reaching out, %s!", form.Name))
-	m.SetBody("text/plain",
-		fmt.Sprintf("Hi %s,\n\nWe received your message:\n\n\"%s\"\n\nWe'll get back to you shortly!\n\nBest regards,\nBroader Real Estate Team",
-			form.Name, form.Message))
-	d := gomail.NewDialer("smtp.gmail.com", 587, "wangageremi725@gmail.com", os.Getenv("APP_PASSWORD"))
+	apiKey := os.Getenv("RESEND_API_KEY")
+	client := resend.NewClient(apiKey)
 
-	if err := d.DialAndSend(m); err != nil {
+	params := &resend.SendEmailRequest{
+		From:    "Broader Real Estate <onboarding@resend.dev>",
+		To:      []string{form.Email},
+		Subject: fmt.Sprintf("Thanks for reaching out, %s!", form.Name),
+		Html: fmt.Sprintf(`
+			<p>Hi %s,</p>
+			<p>We’ve received your message:</p>
+			<blockquote>%s</blockquote>
+			<p>We’ll get back to you shortly.</p>
+			<p>Best regards,<br><strong>Broader Real Estate Team</strong></p>
+		`, form.Name, form.Message),
+	}
+
+	// Send the email
+	_, err = client.Emails.Send(params)
+	if err != nil {
 		log.Println("Error sending email:", err)
 		http.Error(w, "Failed to send email", http.StatusInternalServerError)
 		return
