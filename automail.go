@@ -49,7 +49,6 @@ func sendAutoReply(w http.ResponseWriter, r *http.Request) {
 	m.SetBody("text/plain",
 		fmt.Sprintf("Hi %s,\n\nWe received your message:\n\n\"%s\"\n\nWe'll get back to you shortly!\n\nBest regards,\nBroader Real Estate Team",
 			form.Name, form.Message))
-
 	d := gomail.NewDialer("smtp.gmail.com", 587, "wangageremi725@gmail.com", os.Getenv("APP_PASSWORD"))
 
 	if err := d.DialAndSend(m); err != nil {
