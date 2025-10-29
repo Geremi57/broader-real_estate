@@ -65,7 +65,7 @@ searchTypeBtn.forEach((search_btn) => {
 
 
 async function loadProps() {
-  const response = await fetch("http://broader-real-estate.onrender.com/api/properties");
+  const response = await fetch("https://broader-real-estate.onrender.com/api/properties");
       const assets = await response.json();
       const apartments = []
       const lands = []
