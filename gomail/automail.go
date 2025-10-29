@@ -1,4 +1,4 @@
-package main
+package automail
 
 import (
 	"encoding/json"
@@ -60,11 +60,4 @@ func sendAutoReply(w http.ResponseWriter, r *http.Request) {
 	log.Printf("Auto-reply sent to %s successfully!\n", form.Email)
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte("Email sent successfully!"))
-}
-
-func main() {
-	http.HandleFunc("/api/contact", sendAutoReply)
-
-	fmt.Println("Server running on http://localhost:8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
 }

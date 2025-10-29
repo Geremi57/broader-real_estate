@@ -4,10 +4,14 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
+	"log"
 	"net/http"
+	"os"
 	"strings"
+
 	// "fmt"
-	// "os"
+	"broader-real_estate/automail"
 )
 
 type Property struct {
@@ -355,6 +359,13 @@ Offering spacious 3 & 4-bedroom ultra-modern residences with DSQ, along with lav
 		}
 		http.Error(w, "Property not found", http.StatusNotFound)
 	})
+	mux.HandleFunc("/api/contact", automail.SendAutoReply)
 
-	http.ListenAndServe(":8080", enableCors(mux))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	fmt.Printf("Server running on http://localhost:%s\n", port)
+	log.Fatal(http.ListenAndServe(":"+port, enableCors(mux)))
 }
