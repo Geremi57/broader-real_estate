@@ -9,6 +9,8 @@ import (
 	"net/http"
 	"os"
 	"strings"
+
+	"github.com/Geremi57/broader-real_estate/gomail"
 	// "fmt"
 )
 
@@ -357,7 +359,7 @@ Offering spacious 3 & 4-bedroom ultra-modern residences with DSQ, along with lav
 		}
 		http.Error(w, "Property not found", http.StatusNotFound)
 	})
-	mux.HandleFunc("/api/contact", gomail.sendAutoReply)
+	mux.HandleFunc("/api/contact", gomail.SendAutoReply)
 
 	port := os.Getenv("PORT")
 	if port == "" {

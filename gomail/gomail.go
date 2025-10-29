@@ -21,7 +21,7 @@ func enableCORS(w http.ResponseWriter) {
 	w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 }
-func sendAutoReply(w http.ResponseWriter, r *http.Request) {
+func SendAutoReply(w http.ResponseWriter, r *http.Request) {
 	enableCORS(w)
 
 	if r.Method == http.MethodOptions {
