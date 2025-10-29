@@ -1,4 +1,4 @@
-module broader-real_estate
+module github.com/Geremi57/broader-real_estate
 
 go 1.22.2
 

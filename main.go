@@ -9,9 +9,7 @@ import (
 	"net/http"
 	"os"
 	"strings"
-
 	// "fmt"
-	"broader-real_estate/automail"
 )
 
 type Property struct {

@@ -1,4 +1,4 @@
-package automail
+package gomail
 
 import (
 	"encoding/json"
