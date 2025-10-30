@@ -60,7 +60,7 @@ func SendAutoReply(w http.ResponseWriter, r *http.Request) {
 
 	adminNotice := &resend.SendEmailRequest{
 		From:    "Broader Real Estate <onboarding.dev@resend.dev>",
-		To:      []string{"geremiwanga57@gmail.com"}, // admin inbox
+		To:      []string{"wangageremi725@gmail.com"}, // admin inbox
 		Subject: fmt.Sprintf("New Contact Form Submission from %s", form.Name),
 		Html: fmt.Sprintf(`
 			<h3>New contact form message</h3>
