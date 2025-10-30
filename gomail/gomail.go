@@ -45,8 +45,8 @@ func SendAutoReply(w http.ResponseWriter, r *http.Request) {
 	apiKey := os.Getenv("RESEND_API_KEY")
 	client := resend.NewClient(apiKey)
 
-	params := &resend.SendEmailRequest{
-		From:    "Broader Real Estate <onboarding@resend.dev>",
+	reply := &resend.SendEmailRequest{
+		From:    "Broader Real Estate <wangageremi725@gmail.com>",
 		To:      []string{form.Email},
 		Subject: fmt.Sprintf("Thanks for reaching out, %s!", form.Name),
 		Html: fmt.Sprintf(`
@@ -58,11 +58,29 @@ func SendAutoReply(w http.ResponseWriter, r *http.Request) {
 		`, form.Name, form.Message),
 	}
 
-	// Send the email
-	_, err = client.Emails.Send(params)
+	adminNotice := &resend.SendEmailRequest{
+		From:    "Broader Real Estate <wangageremi725@gmail.com>",
+		To:      []string{"geremiwanga57@gmail.com"}, // admin inbox
+		Subject: fmt.Sprintf("New Contact Form Submission from %s", form.Name),
+		Html: fmt.Sprintf(`
+			<h3>New contact form message</h3>
+			<p><strong>Name:</strong> %s</p>
+			<p><strong>Email:</strong> %s</p>
+			<p><strong>Message:</strong></p>
+			<p>%s</p>
+		`, form.Name, form.Email, form.Message),
+	}
+
+	_, err = client.Emails.Send(reply)
 	if err != nil {
 		log.Println("Error sending email:", err)
 		http.Error(w, "Failed to send email", http.StatusInternalServerError)
+		return
+	}
+
+	if _, err := client.Emails.Send(adminNotice); err != nil {
+		log.Println("Error sending admin notice:", err)
+		http.Error(w, "Failed to notify admin", http.StatusInternalServerError)
 		return
 	}
 
