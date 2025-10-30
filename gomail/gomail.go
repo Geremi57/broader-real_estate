@@ -46,7 +46,7 @@ func SendAutoReply(w http.ResponseWriter, r *http.Request) {
 	client := resend.NewClient(apiKey)
 
 	reply := &resend.SendEmailRequest{
-		From:    "Broader Real Estate <wangageremi725@gmail.com>",
+		From:    "Broader Real Estate <onboarding.dev@resend.dev>",
 		To:      []string{form.Email},
 		Subject: fmt.Sprintf("Thanks for reaching out, %s!", form.Name),
 		Html: fmt.Sprintf(`
@@ -59,7 +59,7 @@ func SendAutoReply(w http.ResponseWriter, r *http.Request) {
 	}
 
 	adminNotice := &resend.SendEmailRequest{
-		From:    "Broader Real Estate <wangageremi725@gmail.com>",
+		From:    "Broader Real Estate <onboarding.dev@resend.dev>",
 		To:      []string{"geremiwanga57@gmail.com"}, // admin inbox
 		Subject: fmt.Sprintf("New Contact Form Submission from %s", form.Name),
 		Html: fmt.Sprintf(`
