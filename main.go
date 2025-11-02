@@ -60,7 +60,7 @@ func main() {
 
 		{
 			ID:       1,
-			Category: "feautured",
+			Category: "featured",
 			Image:    "image/golden-mansion/IMG-20251008-WA0017.jpg",
 			Slides: []string{
 				"image/golden-mansion/IMG-20251008-WA0002.jpg",
