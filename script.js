@@ -99,9 +99,7 @@ searchTypeBtn.forEach((search_btn) => {
         }
       })
       const all = [...cottage, ...apartments, ...villas]
-      console.log(all);
-      console.log(apartments);
-      
+  
       let content = document.querySelector(".featured_properties_content_container")
       
       
@@ -142,7 +140,6 @@ searchTypeBtn.forEach((search_btn) => {
       
       
       let productCard = document.querySelectorAll(" .product_card")
-      console.log(productCard);
       tabsBtn.forEach((tabBtn) => {
         
         // content.innerHTML = ""
@@ -180,7 +177,7 @@ searchTypeBtn.forEach((search_btn) => {
   window.location.href = `properties/property.html?link=${apart.link}`;
 });
 
-          console.log(property);
+       
         })
         
       }
@@ -278,7 +275,7 @@ searchTypeBtn.forEach((search_btn) => {
                   })
                   
                 }
-        else if (tabBtn.textContent == "View All"){
+        else if (tabBtn.textContent == "All"){
           // content.innerHTML = ""
           all.forEach((apart) => {
             const property = document.createElement("div")
@@ -310,13 +307,9 @@ searchTypeBtn.forEach((search_btn) => {
                   })
                 
                 }
-                console.log("fiesttaaa");
-                console.log(tabBtn.textContent);
+
                 tabsBtn.forEach((btn) => btn.classList.remove("active"));
-                
-              console.log(tabBtn.dataset.tab);
-              
-              console.log(tabBtn.id);
+  
               
               // document.getElementById(tabBtn.dataset.tab).classList.add("active")
               tabBtn.classList.add("active");
@@ -330,18 +323,7 @@ searchTypeBtn.forEach((search_btn) => {
 // document.addEventListener("DOMContentLoaded", ()=> {
 
 
-product = content.querySelectorAll(".product_card")
-    product.forEach((prop) => prop.addEventListener("click", function() {
-       assets.forEach((asset => {
-        // console.log(asset.id);
-        if (1 * prop.dataset.id === asset.id) {
-          console.log(asset.title);
-        }
 
-      }))
-      console.log("yesss");
-      console.log(prop.dataset.id);
-    }))
   // console.log(product);
   // console.log(content.children);
 // }) 
@@ -378,11 +360,8 @@ product = content.querySelectorAll(".product_card")
     const featuredLocaion = document.querySelector(".featuredLocation")
     const featured = document.querySelector(".featured")
     const viewProp = document.querySelector(".viewProp")
-    console.log(featured)
-    console.log(featuredHeader);
 
     console.log(`this is the header ${assets}`);
-      console.log(assets);
 
       assets.find(asset => {
         if (asset.category == "featured"){
@@ -392,13 +371,11 @@ product = content.querySelectorAll(".product_card")
           document.querySelector(".sqrft").innerHTML = `<i class="fa fa-maximize"></i><span> ${asset.feet}</span>`
           document.querySelector(".numphotos").textContent = asset.slides.length
           document.querySelector(".featImg").setAttribute("src", asset.image)
-console.log(asset.slides)
           featuredHeader.textContent = asset.title
           const locationIcon = document.createElement("i")
           locationIcon.classList.add("fas")
           locationIcon.classList.add("fa-map-marker-alt")
           featuredLocaion.innerHTML = `<i class="fas fa-map-marker-alt"></i>${asset.location}`
-        console.log(featuredHeader.innerHTML);
         viewProp.addEventListener('click', () => {
 window.location.href = `properties/property.html?link=${asset.link}`;
 });
@@ -414,10 +391,8 @@ document.getElementById("propertytype").addEventListener("change", (event) => {
 // console.log(event.target.value); 
 typeValue = event.target.value
 const locs = document.getElementById("propertylocation").querySelectorAll("option")
-console.log(locs);
 
  if (typeValue === "#") {
-  console.log("youuuuu");
     locs.forEach(loc => loc.classList.remove("hidden"));
     return;
  }
@@ -440,7 +415,6 @@ document.getElementById("propertylocation").addEventListener("change", (event) =
 localValue = event.target.value
 
 // if (typeValue != )
-console.log(typeValue);
 displaySearch()
   // console.log(occur.target.value);
 })
@@ -467,14 +441,12 @@ const allProperties = document.querySelector(".featured_properties_content_conta
 
 searchBtn.addEventListener("click", function(e){
   // assets.forEach()
-  console.log(typeValue);
   e.preventDefault()
   if(typeValue) {
     allProperties.querySelectorAll(".product_card").forEach(node => {
       let nodeId = node.dataset.id
       assets.forEach((asset) => {
         if(asset.id == nodeId){
-          console.log(asset.type,typeValue);
           if(asset.type != typeValue){
             node.classList.add("hidden")
           }
@@ -546,7 +518,6 @@ searchBtn.addEventListener("click", (e) => {
 });
 
 
-console.log(`these are  the  asetts ${assets}`)
 let killCount = 0
 let westCount = 0
 assets.forEach((asset) =>  {
@@ -554,19 +525,15 @@ assets.forEach((asset) =>  {
   if (asset.location == "Killeleshwa"){
     killCount+=1
     document.querySelector(".kille").textContent = asset.location
-    console.log(asset)
   }
   else if (asset.location == "Westlands"){
     document.querySelector(".west").textContent = asset.location
-    console.log(asset)
     westCount+=1
   }
 })
 
 document.querySelector(".numKillProperty").textContent = `${killCount} properties`
 document.querySelector(".numWestProperty").textContent = `${westCount} properties`
-console.log(killCount)
-console.log(westCount)
 
 
 //the part im talking about for every city click should filter according to the cities
@@ -593,10 +560,8 @@ const loggedAssets = document.querySelectorAll(".featured_properties_content_con
     // loggedIds.forEach((ids) => {
       loggedAssets.forEach((prop) => {
         prop.classList.add("hidden")
-        console.log(prop.dataset.id)
         if (loggedIds.includes(prop.dataset.id)) {
           prop.classList.remove("hidden")
-          console.log(prop.classList)
         }
         else {
           prop.classList.add("hidden")
@@ -618,9 +583,6 @@ const loggedAssets = document.querySelectorAll(".featured_properties_content_con
 
 // console.log(`you want a ${typeValue} in ${localValue}`);
 
-
-console.log(
-document.getElementById("propertytype").textContent)
 
 }
      catch (err) {
@@ -686,7 +648,6 @@ let navbar = document.querySelector(".navbar");
 
 menu.onclick = () => {
   menu.classList.toggle("bx-x");
-  console.log(menu.classList);
   navbar.classList.toggle("open");
 };
 
