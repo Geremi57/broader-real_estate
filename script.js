@@ -367,7 +367,6 @@ searchTypeBtn.forEach((search_btn) => {
         if (asset.category == "featured"){
           featured.setAttribute("id", asset.id)
           document.querySelector(".bdrms").innerHTML = `<i class="fas fa-bed"></i><span> ${asset.bedrooms}</span>`
-          document.querySelector(".bathes").innerHTML = `<i class="fas fa-bath"></i><span> ${asset.bathrooms}</span>`
           document.querySelector(".sqrft").innerHTML = `<i class="fa fa-maximize"></i><span> ${asset.feet}</span>`
           document.querySelector(".numphotos").textContent = asset.slides.length
           document.querySelector(".featImg").setAttribute("src", asset.image)
@@ -513,7 +512,6 @@ searchBtn.addEventListener("click", (e) => {
     featuredContainer.appendChild(msg);
   }
 
-
   document.querySelector("#properties").scrollIntoView({ behavior: "smooth" });
 });
 
@@ -575,21 +573,14 @@ const loggedAssets = document.querySelectorAll(".featured_properties_content_con
   // console.log(loggedIds)
 })
 
-
-
-  
-  
-
-
 // console.log(`you want a ${typeValue} in ${localValue}`);
-
 
 }
      catch (err) {
       loader.style.display = "none"
+      // loader.style.opacity = "1"
       console.error("Error loading props:", err)
-      document.querySelector(".errorMsg").innerHTML = `<p style="color:red;">Failed to load properies</p>`
-
+      document.querySelector(".errorMsg").innerHTML = `<p style="color:red;">Failed to load properies please reload screen</p>`
     }
   }
     loadProps();
