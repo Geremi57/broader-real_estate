@@ -83,8 +83,8 @@ amenity.forEach((amen) => {
   const wrapper = document.querySelector(".swiper-wrapper");
   wrapper.innerHTML = "";
 
- if(property.slides) {
-  (property.slides || []).forEach((img) => {
+ if(property.slides && property.slides.length > 1) {
+  property.slides.forEach((img) => {
     const slide = document.createElement("div");
     slide.classList.add("swiper-slide");
     slide.classList.add("property-image")
@@ -112,15 +112,16 @@ amenity.forEach((amen) => {
     },
   });
 }
-else if (property.slides == null){
-  const slide = document.createElement("div");
-    slide.classList.add("swiper-slide");
-    slide.classList.add("property-image")
-    slide.innerHTML = `<img src="${property.image}" alt="Property Image">`
-    wrapper.appendChild(slide);
-  
+else {
+  console.log("Im null")
+  const singleSlide = document.createElement("div");
+    singleSlide.classList.add("swiper-slide");
+    singleSlide.classList.add("property-image")
+    singleSlide.innerHTML = `<img src="../${property.image}" alt="Property Image">`
+    wrapper.appendChild(singleSlide);
+    console.log(singleSlide);
 }
-console.log(property.image);
+
 
 document.getElementById("sendMailBtn").addEventListener("click", (e) => {
   // console.log("gotchaa")

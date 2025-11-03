@@ -30,8 +30,11 @@ searchTypeBtn.forEach((search_btn) => {
   });
 });
 
+
+
+
  var swiper = new Swiper(".citiesSwiper", {
-      spaceBetween: 30,
+      spaceBetween: 90,
       centeredSlides: true,
       slidesPerView: 1,
       loop: true,
@@ -63,15 +66,24 @@ searchTypeBtn.forEach((search_btn) => {
       },
     });
 
-
-async function loadProps() {
+    
+    async function loadProps() {
+  const loader = document.querySelector(".loader");
+  const featuredContainer = document.querySelector(".featured_properties_content_container");
+  const errorMsg = document.querySelector(".errorMsg")
+  try{
+    loader.style.display = "flex"
   const response = await fetch("https://broader-real-estate.onrender.com/api/properties");
       const assets = await response.json();
+      loader.style.display = "none";
+      errorMsg.style.display = "none"
+
       const apartments = []
       const lands = []
       const villas = []
       const cottage = []
-      console.log(assets);
+
+
       assets.forEach((asset) => {
         if (asset.category == "apartments"){
           apartments.push(asset)
@@ -109,7 +121,6 @@ async function loadProps() {
             </a>
                 <ul class="product_features_list">
                 <li><i class="fa-solid fa-bed"> </i>Beds: ${apart.bedrooms.length > 1 ? apart.bedrooms.join(',') : apart.bedrooms[0]}</li>
-                <li><i class="fa-solid fa-bath"> </i> Baths: ${apart.bathrooms}</li>
                     </ul>
                   <div class="price_container">
                   <h5><i class="fas fa-tag"></i>${apart.price}M</h5>
@@ -154,7 +165,6 @@ async function loadProps() {
               </a>
               <ul class="product_features_list">
               <li><i class="fa-solid fa-bed"> </i>Beds: ${apart.bedrooms.length > 1 ? apart.bedrooms.join(',') : apart.bedrooms[0]}</li>
-                    <li><i class="fa-solid fa-bath"> </i> Baths: ${apart.bathrooms}</li>
                     </ul>
                     <div class="price_container">
                     <h5><i class="fas fa-tag"></i>${apart.price}M</h5>
@@ -189,7 +199,6 @@ async function loadProps() {
             </a>
             <ul class="product_features_list">
             <li><i class="fa-solid fa-bed"> </i>Beds: ${apart.bedrooms.length > 1 ? apart.bedrooms.join(',') : apart.bedrooms[0]}</li>
-            <li><i class="fa-solid fa-bath"> </i> Baths: ${apart.bathrooms}</li>
            
             </ul>
             <div class="price_container">
@@ -253,7 +262,6 @@ async function loadProps() {
                     </a>
                     <ul class="product_features_list">
                     <li><i class="fa-solid fa-bed"> </i>Beds: ${apart.bedrooms.length > 1 ? apart.bedrooms.join(',') : apart.bedrooms[0]}</li>
-                    <li><i class="fa-solid fa-bath"> </i> Baths: ${apart.bathrooms}</li>
                     
                     </ul>
                     <div class="price_container">
@@ -286,7 +294,6 @@ async function loadProps() {
                 </a>
                 <ul class="product_features_list">
                 <li><i class="fa-solid fa-bed"> </i>Beds: ${apart.bedrooms.length > 1 ? apart.bedrooms.join(',') : apart.bedrooms[0]}</li>
-                <li><i class="fa-solid fa-bath"> </i> Baths: ${apart.bathrooms}</li>
                 
                     </ul>
                     <div class="price_container">
@@ -321,29 +328,7 @@ async function loadProps() {
 
 // })
 // document.addEventListener("DOMContentLoaded", ()=> {
-  tabsBtn.forEach((tabBtn) => {
-  tabBtn.addEventListener("click", () => {
-    product = content.querySelectorAll(".product_card")
-    product.forEach((prop) => prop.addEventListener("click", function() {
-      // console.log();
-      assets.forEach((asset => {
-        // console.log(asset.id);
-        if (1 * prop.dataset.id === asset.id) {
-          console.log(asset.title);
-          console.log(asset.location);
-          console.log(asset.description);
-          console.log(asset.price);
-          console.log(asset.feet);
-          console.log(asset.type);
-        }
-      }))
-      console.log("yesss");
-      console.log(prop.dataset.id);
-    }))
-    console.log(product);
-    console.log("yazz");
-  })
-})
+
 
 product = content.querySelectorAll(".product_card")
     product.forEach((prop) => prop.addEventListener("click", function() {
@@ -502,7 +487,64 @@ searchBtn.addEventListener("click", function(e){
       })
         })
   }
+  document.querySelector("#properties").scrollIntoView({ behavior: "smooth" });
 })
+
+
+
+
+const propertyType = document.getElementById("propertytype");
+const propertyLocation = document.getElementById("propertylocation");
+
+searchBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+   const existingMsg = document.querySelector(".noProps");
+  if (existingMsg) existingMsg.remove();
+  
+  // document.querySelector(".featured_properties_content_container").innerHTML = ""
+
+  const selectedType = propertyType.value.trim().toLowerCase();
+  const selectedLocation = propertyLocation.value.trim().toLowerCase();
+
+  let loggedIds = [];
+
+  assets.forEach((asset) => {
+    if (
+      (selectedType === "#" || asset.category.toLowerCase() === selectedType) &&
+      (selectedLocation === "#" || asset.location.toLowerCase() === selectedLocation)
+    ) {
+      loggedIds.push(asset.id.toString());
+    }
+  });
+
+  const loggedAssets = document.querySelectorAll(
+    ".featured_properties_content_container .product_card"
+  );
+
+
+  let visibleCount = 0;
+
+  loggedAssets.forEach((prop) => {
+    if (loggedIds.includes(prop.dataset.id)) {
+      prop.classList.remove("hidden");
+      visibleCount++
+    } else {
+      prop.classList.add("hidden");
+    }
+  });
+
+  if (visibleCount === 0) {
+    const msg = document.createElement("p");
+    msg.classList.add("noProps");
+    msg.textContent = `No ${selectedType} were found in ${selectedLocation}`;
+    featuredContainer.appendChild(msg);
+  }
+
+
+  document.querySelector("#properties").scrollIntoView({ behavior: "smooth" });
+});
+
 
 console.log(`these are  the  asetts ${assets}`)
 let killCount = 0
@@ -581,6 +623,13 @@ console.log(
 document.getElementById("propertytype").textContent)
 
 }
+     catch (err) {
+      loader.style.display = "none"
+      console.error("Error loading props:", err)
+      document.querySelector(".errorMsg").innerHTML = `<p style="color:red;">Failed to load properies</p>`
+
+    }
+  }
     loadProps();
 
 

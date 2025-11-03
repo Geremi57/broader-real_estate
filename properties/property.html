@@ -24,6 +24,12 @@
 
 <body>
 
+    <div id="loader">
+    <img src="../image/neutral/load-logo.png" alt="loading..." id="loader-logo">
+  </div>
+
+<div id="content" class="hidden">
+
   <header>
     <a href="../index.html#properties" class="logo"><img src="../image/neutral/Broader (3) (2).png" alt="" /></a>
     <ul class="navbar">
@@ -106,14 +112,10 @@
         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus laborum,
           blanditiis
           non quia quod dolores enim est vel veritatis nulla?.</p>
-        <form action="" method="post">
-          <input type="submit" value="save property" name="savee" class="inline-btn">
-        </form>
-        <a href=""></a>
+       
       </div>
       <!-- </div> -->
-      <p>
-      </p>
+   
 
 
     </div>
@@ -191,9 +193,6 @@
 
       <div class="box">
         <a href="tel:0726858282"><i class="fas fa-phone"></i><span>0726858282</span></a>
-        <a href="tel:0742545572"><i class="fas fa-phone"></i><span>0742545572</span></a>
-        <a href="mailto:wangageremi725@gmail.com"><i
-            class="fas fa-envelope"></i><span>wangageremi725@gmail.com</span></a>
         <a href="#"><i class="fas fa-map-marker-alt"></i><span>Nairobi, Kenya</span></a>
       </div>
 
@@ -205,10 +204,9 @@
       </div>
 
       <div class="box">
-        <a href="#"><span>facebook</span><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><span>twitter</span><i class="fab fa-twitter"></i></a>
-        <a href="#"><span>linkedin</span><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/mwaro_david/"><span>instagram</span><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/broadet.living/"><span>facebook</span><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/broader-realtors-and-venture-brokers-local-and-worldwide-89448758/"><span>linkedin</span><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/mwaro_david/"><span>instagram</span><i class="fab fa-instagram"></i></a>
 
       </div>
 
@@ -226,6 +224,22 @@
 
 
   <script src="property.js"></script>
+  <script>
+  window.addEventListener('load', function () {
+    const loader = document.getElementById('loader');
+    const content = document.getElementById('content');
+
+    setTimeout(() => {
+      loader.style.opacity = '0';
+      loader.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => {
+        loader.style.display = 'none';
+        content.classList.remove('hidden');
+      }, 500);
+    }, 300); 
+  });
+</script>
+</div>
 </body>
 
 </html>

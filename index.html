@@ -100,7 +100,7 @@
 
                   <option value="#">select</option>
                   <option class="apartments" value="westlands">westlands</option>
-                  <option class="apartments" value="Kileleshwa">Kileleshwa</option>
+                  <option class="apartments" value="killeleshwa">Killeleshwa</option>
                   <option class="apartments" value="killimani">Killimani</option>
                   <option class="Land" value="killimani">Machakos</option>
                   <option class="Land" value="killimani">Ruai</option>
@@ -113,7 +113,7 @@
             </fieldset>
             <div class="search_input_container">
               <a href="#properties">
-                <button class="search_form_btn">
+                <button class="search_form_btn"> <i class="fa-solid fa-magnifying-glass"></i>
                   Find A Home
                 </button>
               </a>
@@ -142,7 +142,14 @@
         </div>
         <div class="featured_tab active" id="tab-1">
           <div class="featured_properties_content_container">
-
+            <!-- From Uiverse.io by AbanoubMagdy1 --> 
+<div class="loader">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
+<div class="errorMsg"></div>
           </div>
         </div>
 
@@ -303,9 +310,6 @@
         
       <div class="box">
         <a href="tel:0726858282"><i class="fas fa-phone"></i><span>0726858282</span></a>
-        <a href="tel:0742545572"><i class="fas fa-phone"></i><span>0742545572</span></a>
-        <a href="mailto:wangageremi725@gmail.com"><i
-          class="fas fa-envelope"></i><span>wangageremi725@gmail.com</span></a>
         <a href="#"><i class="fas fa-map-marker-alt"></i><span>Nairobi, Kenya</span></a>
       </div>
       
@@ -317,10 +321,10 @@
       </div>
 
       <div class="box">
-        <a href="#"><span>facebook</span><i  class="fab fa-facebook-f"></i></a>
-        <a href="#"><span>twitter</span><i class="fab fa-twitter"></i></a>
-        <a href="#"><span>linkedin</span><i class="fab fa-linkedin"></i></a>
-        <a href="#"><span>instagram</span><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/broadet.living/"><span>facebook</span><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/broader-realtors-and-venture-brokers-local-and-worldwide-89448758/"><span>linkedin</span><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/mwaro_david/"><span>instagram</span><i class="fab fa-instagram"></i></a>
+
 
       </div>
 
@@ -352,7 +356,6 @@
     const loader = document.getElementById('loader');
     const content = document.getElementById('content');
 
-    // Wait a tiny bit to make transition smooth
     setTimeout(() => {
       loader.style.opacity = '0';
       loader.style.transition = 'opacity 0.5s ease';
@@ -360,7 +363,7 @@
         loader.style.display = 'none';
         content.classList.remove('hidden');
       }, 500);
-    }, 300); // Adjust the delay if needed
+    }, 300); 
   });
 </script>
 
