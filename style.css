@@ -344,7 +344,7 @@ section{
   .search_form
   .search_input_container
   .search_input {
-  width: 120%;
+  width: 100%;
   height: 40px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 10px;
@@ -356,8 +356,9 @@ section{
 }
 
 .hero_section .hero_container .search_form_container {
-  width: 80%;
+  width: 70%;
   display: flex;
+
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -368,10 +369,10 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 90px;
+  gap: 50px;
   background: var(--other-color);
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   border-radius: 5px;
 }
 
@@ -391,6 +392,10 @@ section{
   margin-top: 25px;
   cursor: pointer;
   transition: all 0.5s linear;
+}
+
+.search_form_btn{
+  padding: 12PX;
 }
 
 .hero_section
