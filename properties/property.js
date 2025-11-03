@@ -1,6 +1,13 @@
-let swiper; // keep a reference globally
+let swiper; 
 
 async function loadProperty() {
+  const loader = document.getElementById("loader")
+  const content = document.getElementById("content")
+
+  try{
+    loader.style.display = "flex"
+    content.classList.add("hidden")
+
   const amenities = document.querySelector(".amenities")
   const params = new URLSearchParams(window.location.search);
   const link = params.get('link');
@@ -10,7 +17,13 @@ async function loadProperty() {
   }
 
   const response = await fetch(`https://broader-real-estate-1.onrender.com/api/properties/${link}`);
+   if (!response.ok) throw new Error('Failed to load property data');
+
   const property = await response.json();
+
+
+
+  
 console.log(response)
   console.log(property.status, property.deposit)
   console.log(document.querySelector(".property-price"));
@@ -143,6 +156,19 @@ document.getElementById("sendWhatsAppBtn").addEventListener("click", (e) => {
   window.open(whatsappLink, "_blank");
 });
 
+loader.style.opacity = '0';
+    loader.style.transition = 'opacity 0.5s ease';
+    setTimeout(() => {
+      loader.style.display = 'none';
+      content.classList.remove('hidden');
+    }, 500);
+
+}
+catch (error){
+  console.error(error)
+  loadProperty.innerHTML = `<p style = "color:red">Failed to load properties</p>`
+}
+  
 }
 
 const header = document.querySelector("header");
