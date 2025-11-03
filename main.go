@@ -169,7 +169,7 @@ func main() {
 			Location:  "Killeleshwa",
 			Type:      "apartments",
 			Link:      "beacon-by-synina",
-			Bedrooms:  []int{5},
+			Bedrooms:  []int{3, 4, 5},
 			Bathrooms: 6,
 			Sqrft:     2728,
 			SqrftMax:  5258,
