@@ -40,7 +40,6 @@ console.log(response)
   document.querySelector(".deposit").innerHTML = `<i>deposit :</i><span>${property.deposit}</span>`
   document.querySelector(".status").innerHTML = `<i>status :</i><span>${property.furnished}</span>`
   document.querySelector(".bdrm").innerHTML = `<i>bedrooms :</i><span>${property.bedrooms}</span>`
-  document.querySelector(".bthrm").innerHTML = `<i>bathroom :</i><span>${property.bathrooms}</span>`
   document.querySelector(".floors").textContent = property.floors
   document.querySelector(".mortgage").innerHTML = `<i>mortgage :</i><span>${property.mortgage}</span>`
   document.querySelector(".installments").innerHTML = `<i>installments :</i><span>${property.installments}</span>`
