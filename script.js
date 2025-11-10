@@ -37,7 +37,7 @@ searchTypeBtn.forEach((search_btn) => {
       spaceBetween: 90,
       centeredSlides: true,
       slidesPerView: 1,
-      loop: true,
+      loop: false,
       autoplay: {
         delay: 2500,
         disableOnInteraction: false,
