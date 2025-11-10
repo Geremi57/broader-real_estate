@@ -710,7 +710,7 @@ body {
 
 .property-container .details .name{
   font-size: 5rem;
-  font-family: cursive;
+  font-family: serif;
   text-decoration: underline;
   text-overflow: ellipsis;
   overflow-x: hidden;
