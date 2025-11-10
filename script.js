@@ -534,7 +534,6 @@ document.querySelector(".numKillProperty").textContent = `${killCount} propertie
 document.querySelector(".numWestProperty").textContent = `${westCount} properties`
 
 
-//the part im talking about for every city click should filter according to the cities
   
 const cities = document.querySelectorAll(".cities_card")
 console.log(cities)

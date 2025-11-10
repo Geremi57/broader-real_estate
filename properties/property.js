@@ -150,7 +150,7 @@ document.getElementById("sendWhatsAppBtn").addEventListener("click", (e) => {
 
   // console.log("WhatsApp button clicked");
   const message = document.getElementById("message").value;
-  const phoneNumber = "254742545572";
+  const phoneNumber = "254726858282";
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   window.open(whatsappLink, "_blank");
 });

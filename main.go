@@ -184,7 +184,7 @@ Offering spacious 3 & 4-bedroom ultra-modern residences with DSQ, along with lav
 			Installments: "available",
 			Mortgage:     "available",
 			Floors:       22,
-			Amenities:    []string{"Swimming pool", "Rooftop Gazebo & BBQ", "Ample water supply", "High speed elevators", "Back-up generators", "Security & 24/hr CCTV", "Dedicated parking space", "Skyview Gym and aerobics", "Conncierge Receptio lounge", "Hall for exclusive gatherings"},
+			Amenities:    []string{"Swimming pool", "Rooftop Gazebo & BBQ", "Ample water supply", "High speed elevators", "Back-up generators", "Security & 24/hr CCTV", "Dedicated parking space", "Skyview Gym and aerobics", "Concierge Reception lounge", "Hall for exclusive gatherings"},
 		},
 		{
 			ID:       5,
