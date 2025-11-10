@@ -1304,6 +1304,15 @@ header {
 }
 
 @media (max-width:768px){
+   .about{
+      margin-top: 17%;
+   }
+
+   
+   .contact{
+      margin-top: 17%;
+
+   }
 
    #menu-btn{
       display: inline-block;
