@@ -20,7 +20,6 @@ allSections.forEach(function (section) {
 
 
 const searchTypeBtn = document.querySelectorAll(".search_type_btn");
-console.log(document.querySelectorAll(".product_card"));
 // console.log(searchTypeBtn);
 searchTypeBtn.forEach((search_btn) => {
   search_btn.addEventListener("click", () => {
@@ -361,7 +360,6 @@ searchTypeBtn.forEach((search_btn) => {
     const featured = document.querySelector(".featured")
     const viewProp = document.querySelector(".viewProp")
 
-    console.log(`this is the header ${assets}`);
 
       assets.find(asset => {
         if (asset.category == "featured"){
@@ -406,7 +404,6 @@ locs.forEach((loc => {
   }
 }))
 
-displaySearch()
 
 })
 
@@ -414,26 +411,10 @@ document.getElementById("propertylocation").addEventListener("change", (event) =
 localValue = event.target.value
 
 // if (typeValue != )
-displaySearch()
   // console.log(occur.target.value);
 })
 
-function displaySearch(){
- if (typeValue && localValue){
-  console.log(`you want a ${typeValue} in ${localValue}`);
- } 
- else if (typeValue) {
-  console.log(`you want a ${typeValue}`);
-}
- else if (localValue) {
-   console.log(`you want something in ${localValue}`);
- }
- else{
-  console.log(`please select your preference`)
-}
-}
 
-displaySearch()
 
 const searchBtn = document.querySelector(".search_form_btn")
 const allProperties = document.querySelector(".featured_properties_content_container")
@@ -453,7 +434,6 @@ searchBtn.addEventListener("click", function(e){
             node.classList.remove("hidden")
 
           }
-          console.log(node.classList);
         }
       })
         })
@@ -579,7 +559,7 @@ const loggedAssets = document.querySelectorAll(".featured_properties_content_con
       loader.style.display = "none"
       // loader.style.opacity = "1"
       console.error("Error loading props:", err)
-      document.querySelector(".errorMsg").innerHTML = `<p style="color:red;">Failed to load properies please reload screen</p>`
+      document.querySelector(".errorMsg").innerHTML = `<p style="color:red;">Failed to load properies please reload page</p>`
     }
   }
     loadProps();

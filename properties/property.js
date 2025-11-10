@@ -24,10 +24,6 @@ async function loadProperty() {
 
 
   
-console.log(response)
-  console.log(property.status, property.deposit)
-  console.log(document.querySelector(".property-price"));
-
   document.getElementById("property-title").textContent = property.title;
   document.querySelector("#property-location").textContent = property.location;
   document.querySelector(".property-price").textContent = `Ksh ${property.price.toLocaleString()}M`;
@@ -78,7 +74,7 @@ property.amenities.forEach(amen => {
   amenity.push(amen)
 })
 console.log(property.price);
-console.log(property);
+
 console.log(amenity);
 
 
