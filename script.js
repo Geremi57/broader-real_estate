@@ -116,11 +116,12 @@ searchTypeBtn.forEach((search_btn) => {
             <a href="properties/property.html?link=${apart.link}">
             <h3>${apart.title}</h3>
             </a>
+            <div class=location>   <i class="fas fa-map-marker-alt"></i> ${apart.location}</div>
                 <ul class="product_features_list">
                 <li><i class="fa-solid fa-bed"> </i>Beds: ${apart.bedrooms.length > 1 ? apart.bedrooms.join(',') : apart.bedrooms[0]}</li>
                     </ul>
                   <div class="price_container">
-                  <h5><i class="fas fa-tag"></i>${apart.price}M</h5>
+                  <h5><i class="fas fa-tag"></i> ${apart.price}M</h5>
                   </div>
                   </div>
                   </div>
@@ -159,6 +160,7 @@ searchTypeBtn.forEach((search_btn) => {
               <a href="properties/property.html?link=${apart.link}">
               <h3>${apart.title}</h3>
               </a>
+              <div class=location>   <i class="fas fa-map-marker-alt"></i> ${apart.location}</div>
               <ul class="product_features_list">
               <li><i class="fa-solid fa-bed"> </i>Beds: ${apart.bedrooms.length > 1 ? apart.bedrooms.join(',') : apart.bedrooms[0]}</li>
                     </ul>
@@ -193,6 +195,7 @@ searchTypeBtn.forEach((search_btn) => {
             <a href="properties/property.html?link=${apart.link}">
             <h3>${apart.title}</h3>
             </a>
+            <div class=location>   <i class="fas fa-map-marker-alt"></i> ${apart.location}</div>
             <ul class="product_features_list">
             <li><i class="fa-solid fa-bed"> </i>Beds: ${apart.bedrooms.length > 1 ? apart.bedrooms.join(',') : apart.bedrooms[0]}</li>
            
@@ -288,6 +291,7 @@ searchTypeBtn.forEach((search_btn) => {
                 <a href="properties/property.html?link=${apart.link}">
                 <h3>${apart.title}</h3>
                 </a>
+                <div class=location>   <i class="fas fa-map-marker-alt"></i> ${apart.location}</div>
                 <ul class="product_features_list">
                 <li><i class="fa-solid fa-bed"> </i>Beds: ${apart.bedrooms.length > 1 ? apart.bedrooms.join(',') : apart.bedrooms[0]}</li>
                 
