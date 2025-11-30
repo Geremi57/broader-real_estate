@@ -116,7 +116,7 @@ searchTypeBtn.forEach((search_btn) => {
             <a href="properties/property.html?link=${apart.link}">
             <h3>${apart.title}</h3>
             </a>
-            <div class=location>   <i class="fas fa-map-marker-alt"></i> ${apart.location}</div>
+            <div class=location>   <i class="fas fa-map-marker-alt">j</i> ${apart.location}</div>
                 <ul class="product_features_list">
                 <li><i class="fa-solid fa-bed"> </i>Beds: ${apart.bedrooms.length > 1 ? apart.bedrooms.join(',') : apart.bedrooms[0]}</li>
                     </ul>

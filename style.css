@@ -761,8 +761,11 @@ section{
   top: 20px;
   /* margin-left: -38px; */
   bottom: 0;
-  
   gap: 10px;
+}
+
+.product_card .location {
+  color: #1aa090;
 }
 
 .text_container{
